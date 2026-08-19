@@ -1,0 +1,37 @@
+[user]
+	email = qyt06455@nifty.com
+	name = Daisuke Kimura 
+	mail = kmr@is.sci.toho-u.ac.jp
+[color]
+	ui = true
+
+[advice]
+statusHints = false
+statusUoption = false
+#detachedHead = false
+
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /usr/bin/kdiff3
+	trustExitCode = false
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	trustExitCode = false
+	path = /usr/bin/kdiff3
+
+[alias]
+logv = log --format=format:'%h %an,%ad \"%s\"' --name-only --all
+	# --name-only shows file names
+graph = log --all --graph --format=tformat:'%h %s (%an,%ad)'
+	# only --graph can show dependency of merge
+parent = log --format=tformat:'%h %an,%ad \"%s\"' -1
+tip = log --format=tformat:'%h %an,%ad \"%s\"' --all -1
+statusm = status -uno
+rollbackcommit = reset --soft HEAD^
+rollbackpull = reset --hard ORIG_HEAD
+path = remote -v
+update = checkout master
+manifest = ls-tree -r --name-only --full-tree HEAD
+updateC = checkout -f master
